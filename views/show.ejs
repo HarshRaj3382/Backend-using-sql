@@ -1,0 +1,32 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2 align="center">Welcome to the DB Section</h2>
+  <h3>Join us today</h3>
+  <a href="/home/new">create us</a>
+  <table border="solid" rules="all">
+    <tr>
+      <th>UserId</th>
+      <th>Username</th>
+      <th>email</th>
+    </tr>
+    <% for(let res of result){ %>
+    <tr>
+      <td><%= res.userId %></td>
+      <td><%= res.username %></td>
+      <td><%= res.email %></td>
+      <td><a href="/home/<%= res.userId %>?_method=DELETE" onclick="return confirm('Are you sure?')">Delete</a>
+      </td>
+      <td><a href="/home/<%= res.userId %>/edit">Edit </a></td>
+      
+    </tr>
+    <% } %>
+  </table>
+</body>
+</html>
+
